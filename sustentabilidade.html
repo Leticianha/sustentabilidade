@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a2288264db.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img-interface/lenabi 1.png" type="image/x-icon">
+
+    <title>LeNabi - sustentável</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container-fundo">
+            <div class="container">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="img-interface/lenabi 1.png" alt="borboleta voando dentro de um livro">
+                        <h2>LeNabi</h2>
+                    </div>
+                </a>
+                <div class="buscar">
+                    <input type="text" id="buscar" placeholder="Buscar livro" oninput="buscarProduto()">
+                </div>
+
+                <div id="favoritos" onclick="toggleFavoritos()">
+                    <div class="imagem">
+                        <i class="fa-regular fa-heart" style="color: #522318;"></i>
+                    </div>
+                    <span id="cont-favoritos">0</span>
+                </div>
+                <a href="login.html" class="button"><span>Fazer login</span></a>
+            </div>
+        </div>
+        <nav>
+            <div class="botoes">
+                <a href="#" id="carregarConteudo">Pré-Venda</a>
+                <a href="#" id="carregarLancamentos">Lançamentos</a>
+                <button id="loadContentButton">Produtos</button>
+                <a href="#" id="sustentavel-button">Sustentabilidade</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-sus">
+        <div class="center-sus">
+            <div class="stack-area-sus">
+                <div class="left-sus">
+                    <div class="titulo-sus">Sustentável!</div>
+                    <div class="sub-titulo-sus">
+                        Nosso site é dedicado à sustentabilidade em livros. Somos uma editora comprometida em oferecer livros com folhas recicláveis, promovendo uma leitura consciente em harmonia com o meio ambiente.
+                    </div>
+                </div>
+                <div class="right-sus">
+                    <div class="cards-sus">
+                        <div class="card-sus">
+                            <div class="sub-sus">Simplified</div>
+                            <div class="content-sus">Lorem ipsum dolor sit amet consectetur adipisicing elit!</div>
+                        </div>
+                        <div class="card-sus">
+                            <div class="sub-sus">Facilitated</div>
+                            <div class="content-sus">Lorem ipsum dolor sit amet consectetur adipisicing elit!</div>
+                        </div>
+                        <div class="card-sus">
+                            <div class="sub-sus">Support</div>
+                            <div class="content-sus">Lorem ipsum dolor sit amet consectetur adipisicing elit!</div>
+                        </div>
+                        <div class="card-sus">
+                            <div class="sub-sus">Boost Productivity</div>
+                            <div class="content-sus">Lorem ipsum dolor sit amet consectetur adipisicing elit!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="linha-sus"></div>
+            <div class="saibaProjeto"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-footer">
+            <nav>
+                <div class="parte1">
+                    <a href="#">Produtos</a>
+                    <a href="#">Lançamentos</a>
+                    <a href="#">Pré-venda</a>
+                </div>
+                <div class="parte2">
+                    <a href="#">Favoritos</a>
+                    <a href="#">Sustentabilidade</a>
+                    <a href="#">Sobre nós</a>
+                </div>
+            </nav>
+            <div class="redes-sociais">
+                <a href="mailto:editoralenabi@gmail.com" target="_blank"><img src="img-interface/carbon_email.svg"
+                        alt=""></a>
+                <a href="https://www.instagram.com/editoralenabi/?igshid=YTQwZjQ0NmI0OA%3D%3D" target="_blank"><img
+                        src="img-interface/uil_instagram.svg" alt=""></a>
+                <a href="https://x.com/LeNabiEditora?t=-ry8Op0ZSihvYuzXTeuZ8w&s=09" target="_blank"><img
+                        src="img-interface/simple-icons_x.svg" alt=""></a>
+            </div>
+            <div class="logo-footer">
+                <img src="img-interface/lenabi 1.png" alt="">
+                <h2>LeNabi</h2>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let cardsSus = document.querySelectorAll(".card-sus");
+        let stackAreaSus = document.querySelector(".stack-area-sus");
+
+        function rotateCardsSus() {
+            let angle = 0;
+            cardsSus.forEach((card) => {
+                if (card.classList.contains("active")) {
+                    card.style.transform = `translate(-50%, -120vh) rotate(-48deg)`;
+                } else {
+                    card.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+                    angle = angle - 10;
+                }
+            });
+        }
+
+        rotateCardsSus();
+
+        window.addEventListener("scroll", ()=>{
+            let proportion = stackAreaSus.getBoundingClientRect().top/window.innerHeight;
+            if(proportion<=0){
+                let n = cardsSus.length;
+                let index = Math.ceil((proportion*n) / 2)
+                index = Math.abs(index) - 1;
+                for(let i=0; i<n;i++){
+                    if(i<=index) {
+                        cardsSus[i].classList.add("active")
+                    } else {
+                        cardsSus[i].classList.remove("active")
+                    }
+                }
+                rotateCardsSus()
+            }
+        })
+    </script>
+</body>
+
+</html>

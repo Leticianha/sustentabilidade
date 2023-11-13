@@ -51,7 +51,9 @@
                 <div class="left-sus">
                     <div class="titulo-sus">Sustentável!</div>
                     <div class="sub-titulo-sus">
-                        Nosso site é dedicado à sustentabilidade em livros. Somos uma editora comprometida em oferecer livros com folhas recicláveis, promovendo uma leitura consciente em harmonia com o meio ambiente.
+                        Nosso site é dedicado à sustentabilidade em livros. Somos uma editora comprometida em oferecer
+                        livros com folhas recicláveis, promovendo uma leitura consciente em harmonia com o meio
+                        ambiente.
                     </div>
                 </div>
                 <div class="right-sus">
@@ -76,29 +78,30 @@
                 </div>
             </div>
             <div class="linha-sus"></div>
-            <div class="saibaProjeto">
-                <img src="img-interface/plano de fundo - papel.svg" alt="papel amassado">
-                <div class="conteudo-sus">
-                    <h1>saiba mais do <span>projeto!</span></h1>
-                    <div class="biodegradaveis">
-                        <img src="img-interface/biodegradaveis.png" alt="vaso com planta">
-                        <div class="biodegradavel-texto">
-                            <h2>Nossas folhas biodegradáveis!</h2>
-                            <p>Cada página é uma história eco-friendly. Nossos livros são impressos em folhas biodegradáveis, unindo leitura apaixonante e cuidado com o meio ambiente. Descubra a magia das palavras enquanto faz a diferença para o planeta. </p>
-                        </div>
-                    </div>
-                    <div class="planeta">
-                        <div class="planeta-texto">
-                            <h2>Ajude o planeta conosco!</h2>
-                            <p>Junte-se a nossa missão de promover a sustentabilidade e conscientização ambiental através de nossas publicações. Escolhendo nossos materiais, você ajuda a construir um futuro mais verde e saudável. Faça parte desta jornada sustentável! </p>
-                        </div>
-                        <img src="img-interface/planeta.png" alt="folha">
+        </div>
+        <div class="saibaProjeto">
+            <div class="conteudo-sus">
+                <h1>saiba mais do <span>projeto!</span></h1>
+                <div class="biodegradaveis">
+                    <img src="img-interface/biodegradaveis.png" alt="vaso com planta">
+                    <div class="biodegradavel-texto">
+                        <h2>Nossas folhas biodegradáveis!</h2>
+                        <p>Cada página é uma história eco-friendly. Nossos livros são impressos em folhas
+                            biodegradáveis, unindo leitura apaixonante e cuidado com o meio ambiente. Descubra a
+                            magia das palavras enquanto faz a diferença para o planeta. </p>
                     </div>
                 </div>
-                <div class="divBranca"></div>
-            <div class="linha-sus-dois"></div>
+                <div class="planeta">
+                    <div class="planeta-texto">
+                        <h2>Ajude o planeta conosco!</h2>
+                        <p>Junte-se a nossa missão de promover a sustentabilidade e conscientização ambiental
+                            através de nossas publicações. Escolhendo nossos materiais, você ajuda a construir um
+                            futuro mais verde e saudável. Faça parte desta jornada sustentável! </p>
+                    </div>
+                    <img src="img-interface/planeta.png" alt="folha">
+                </div>
             </div>
-            
+            <div class="linha-sus-dois"></div>
         </div>
     </main>
 
@@ -149,14 +152,14 @@
 
         rotateCardsSus();
 
-        window.addEventListener("scroll", ()=>{
-            let proportion = stackAreaSus.getBoundingClientRect().top/window.innerHeight;
-            if(proportion<=0){
+        window.addEventListener("scroll", () => {
+            let proportion = stackAreaSus.getBoundingClientRect().top / window.innerHeight;
+            if (proportion <= 0) {
                 let n = cardsSus.length;
-                let index = Math.ceil((proportion*n) / 2)
+                let index = Math.ceil((proportion * n) / 2)
                 index = Math.abs(index) - 1;
-                for(let i=0; i<n;i++){
-                    if(i<=index) {
+                for (let i = 0; i < n; i++) {
+                    if (i <= index) {
                         cardsSus[i].classList.add("active")
                     } else {
                         cardsSus[i].classList.remove("active")

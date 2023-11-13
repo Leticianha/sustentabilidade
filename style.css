@@ -1775,14 +1775,16 @@ input::-webkit-inner-spin-button {
   margin-bottom: 54px;
 }
 
-.saibaProjeto img {
-  width: 100%;
-  height: 1189;
+.saibaProjeto {
+  background-image: url(img-interface/plano\ de\ fundo\ -\ papel.svg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100vw;
+  padding: 70px 0;
+  margin-bottom: 10%;
 }
 
 .conteudo-sus {
-  position: absolute;
-  top: 2517px;
   display: grid;
   width: 100%;
   justify-items: center;
@@ -1858,7 +1860,7 @@ input::-webkit-inner-spin-button {
   height: 4.3px;
   border-radius: 11px;
   position: absolute;
-  top: 3300px;
+  top: 3238px;
   margin-left: 175px;
 }
 
